@@ -14,9 +14,12 @@ const transactionRoutes = require("./routes/transaction.route");
 /**
  * - Use Routers
  */
-app.get("/",(req,res)=>{
-    console.log("Ledger Server is up and runnig")
-})
+app.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "Ledger API is running"
+  });
+});
 
 app.use("/api/auth" , authRouter)    
 app.use("/api/accounts",accountRouter)
